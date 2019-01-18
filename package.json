@@ -1,0 +1,14 @@
+{
+  "name": "bangumi_calendar",
+  "version": "1.0.0",
+  "description": "bangumi calendar",
+  "main": "spider.js",
+  "dependencies": {
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5",
+    "simple-git": "^1.107.0"
+  },
+  "devDependencies": {},
+  "author": "ekibun",
+  "license": "ISC"
+}
