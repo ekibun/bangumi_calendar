@@ -27,6 +27,7 @@ let fileName = `calendar.json`;
                 fs.appendFileSync(fileName, `,\n`);
             first = false;
             fs.appendFileSync(fileName, JSON.stringify({
+		id: subject.id,
                 name: subject.name,
                 name_cn: subject.name_cn,
                 air_date: subject.air_date,
