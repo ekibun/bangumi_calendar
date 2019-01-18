@@ -41,4 +41,10 @@ let fileName = `calendar.json`;
     }
 })().then(() => {
     fs.appendFileSync(fileName, `]`);
+    let time = new Date();
+    git.add('./*')
+        .commit('update at ' + time)
+        .push(['-u', 'origin', 'master'], (e) => {
+            console.log('commit 成功，时间：' + time)
+        })
 });
