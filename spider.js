@@ -7,7 +7,7 @@ let fileName = `calendar.json`;
 (async () => {
     fs.writeFileSync(fileName, `[`);
     let date = new Date();
-    let weeklist = await request(`https://bgmlist.com/tempapi/bangumi/${date.getFullYear()}/${date.getMonth() + 1}/json`, { json: true });
+    let weeklist = await request(`https://bgmlist.com/tempapi/bangumi/${date.getFullYear()}/${date.getMonth()%3+1}/json`, { json: true });
     let first = true;
     for (id in weeklist) {
         let bgmId = weeklist[id].bgmId;
