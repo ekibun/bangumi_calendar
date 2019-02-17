@@ -7,7 +7,7 @@ let fileName = `calendar.json`;
 (async () => {
     fs.writeFileSync(fileName, `[`);
     let date = new Date();
-    let weeklist = await request(`https://bgmlist.com/tempapi/bangumi/${date.getFullYear()}/${date.getMonth()%3+1}/json`, { json: true });
+    let weeklist = await request(`https://bgmlist.com/tempapi/bangumi/${date.getFullYear()}/${Math.abs(date.getMonth()/4)*4+1}/json`, { json: true });
     let first = true;
     for (id in weeklist) {
         let bgmId = weeklist[id].bgmId;
@@ -29,7 +29,7 @@ let fileName = `calendar.json`;
                 fs.appendFileSync(fileName, `,\n`);
             first = false;
             fs.appendFileSync(fileName, JSON.stringify({
-		id: subject.id,
+		        id: subject.id,
                 name: subject.name,
                 name_cn: subject.name_cn,
                 air_date: subject.air_date,
@@ -48,6 +48,6 @@ let fileName = `calendar.json`;
     git.add('./*')
         .commit('update at ' + time)
         .push(['-u', 'origin', 'master'], (e) => {
-            console.log('commit 成功，时间：' + time)
+            console.log('commit '+ e + ', at：' + time)
         })
 });
