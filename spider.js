@@ -14,7 +14,9 @@ let fileName = `calendar.json`;
         let subject = undefined;
         console.log(bgmId);
         while (!subject)
-            subject = await request(`https://api.bgm.tv/subject/${bgmId}?responseGroup=large`, { json: true });
+            subject = await request(`https://api.bgm.tv/subject/${bgmId}?responseGroup=large`, { json: true }).catch((error)=>{
+                return new Promise((resolve)=>{setTimeout(resolve, 1000)});
+            });
         if (!subject.eps) continue;
         let eps = [];
         subject.eps.filter(ep => ep.airdate).forEach(ep => {
