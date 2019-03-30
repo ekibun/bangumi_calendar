@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "bangumi calendar",
   "main": "spider.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ekibun/bangumi_calendar.git"
+  },
   "dependencies": {
+    "bangumi-data": "^0.2.46",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.23",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.5",
     "simple-git": "^1.107.0"
