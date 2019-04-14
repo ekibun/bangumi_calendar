@@ -65,7 +65,7 @@ let getChinaDate = (item) => {
                 weekDayCN: dateCN.weekDay,
                 timeJP: dateJP.time,
                 timeCN: dateCN.time,
-                image: subject.images.grid,
+                image: subject.images && subject.images.grid,
                 eps: eps
             }))
         }
