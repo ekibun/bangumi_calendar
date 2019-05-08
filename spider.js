@@ -66,7 +66,10 @@ let getChinaDate = (item) => {
                 timeJP: dateJP.time,
                 timeCN: dateCN.time,
                 image: subject.images && subject.images.grid,
-                eps: eps
+                eps: eps.map(ep=>{
+                    let {comment, desc, duration, ...nep} = ep
+                    return nep
+                })
             }))
         }
     }
