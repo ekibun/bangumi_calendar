@@ -10,8 +10,7 @@
   "dependencies": {
     "bangumi-data": "^0.3.6",
     "request": "^2.88.0",
-    "request-promise-native": "^1.0.7",
-    "simple-git": "^1.121.0"
+    "request-promise-native": "^1.0.7"
   },
   "devDependencies": {},
   "author": "ekibun",

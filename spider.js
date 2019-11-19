@@ -1,6 +1,12 @@
+/*
+ * @Description: 
+ * @Author: ekibun
+ * @Date: 2019-11-19 16:18:44
+ * @LastEditors: ekibun
+ * @LastEditTime: 2019-11-19 16:21:01
+ */
 const bangumiData = require('bangumi-data');
 const request = require('request-promise-native');
-const git = require('simple-git')(`./`);
 const fs = require('fs');
 
 let fileName = `calendar.json`;
@@ -74,11 +80,4 @@ let getChinaDate = (item) => {
         }
     }
     fs.appendFileSync(fileName, `]`);
-})().then(() => {
-    let time = new Date();
-    git.add('./*')
-        .commit('update at ' + time)
-        .push(['-u', 'origin', 'master'], (e) => {
-            console.log('commit ' + (e == null ? "成功" : e) + ', at：' + time)
-        })
-});
+})()
